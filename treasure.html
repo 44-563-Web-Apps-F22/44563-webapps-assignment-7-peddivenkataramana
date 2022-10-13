@@ -216,13 +216,14 @@
 
     </div>
 
+    <button type="button" onclick="set()">New Game</button>
     <script>
         const ids = ["i0", "i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10", "i11", "help", "i13", "i14", "i15", "i16", "i17", "i18", "i19", "i20", "i21", "i22", "i23", "i24"]
 
         let chestCount = 0
         let score = 0
         let lastCheck = 12
-        let treasureLocation = 18
+    let treasureLocation = 18
 
         function check(position) {
             image = document.getElementById(ids[position])
@@ -271,6 +272,22 @@
         }
 
 
+        function set() {
+      treasureLocation = Math.floor(Math.random() * 24)
+      while(treasureLocation == 12) {
+          treasureLocation = Math.floor(Math.random() * 24)
+      }
+      chestCount = 0
+      score = 0
+      document.getElementById("chests").innerHTML = "Number of chests checked is zero"
+      document.getElementById("score").innerHTML = "Score is unknown"
+      document.getElementById("help").innerHTML = "Help report"
+      for(let i = 0; i < 24; i++) {
+          if(i != 12) {
+              document.getElementById(ids[i]).src = "1.jpg"
+          }
+      }
+  }
 
 
 
