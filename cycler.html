@@ -53,12 +53,12 @@
 	function makeNewDiv() {
 		let element = document.createElement("div")
 		let value = document.getElementById("inputElement").value
-
+        let container = document.getElementById('inputElement').value
+		container.appendChild(element)
+		
 		element.innerHTML = value
 		element.className = "cycler"
 
-		let container = document.getElementById("target")
-		container.appendChild(element)
 	}
  
         function get() {
