@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html> <head> <style>
-    .flex-container {
+    .flex-sp {
       display: flex;  flex-direction:row;
       background-color: lightblue;
   }
 
-.flex-container > div {  /*div children of the flex container*/
+.flex-sp > div {  /*div children of the flex sp*/
   background-color:lightcyan; 
   margin: 10px;  padding: 20px;  font-size: 30px;
 }
 
 /* Responsive layout */
 @media (max-width: 600px) { 
-	 .flex-container{
+	 .flex-sp{
 		 flex-direction:column;
 		 background-color: green;
 	  }
@@ -26,11 +26,11 @@
 
 		<body style="background-color:lightgrey;">
 	
-        <div class="container text-center">
-            <div class="container-fluid p-5 bg-warning text-black text-center">
+        <div class="sp text-center">
+            <div class="sp-fluid p-5 bg-warning text-black text-center">
                 <h1>Venkataramana Peddi builds a cycler</h1>
             </div><br>
-            <div class="flex-container" id="target">
+            <div class="flex-sp" id="target">
                 <div class="cycler">row item 1</div>   
                 <div class="cycler">row item 2</div>  
                 <div class="cycler">row item 3</div>  
@@ -39,9 +39,9 @@
             <input class="form-control" type="text" name="input" id="inputElement" value="">
 	<br>
 	<p class="message"> 
-		Press the button to create an new element of type div and then add it to the container.
+		Press the button to create an new element of type div and then add it to the sp.
 	</p>
-	<div class="container text-center">
+	<div class="sp text-center">
 		<button class="btn btn-warning" type="submit" onclick="makeNewDiv()">Add Value</button>
 		<button class="btn btn-danger" type="submit" onclick="get()">Get</button>
 		<button class="btn btn-success" type="submit" onclick="spin()">Spin</button>
@@ -53,8 +53,8 @@
 	function makeNewDiv() {
 		let element = document.createElement("div")
 		let value = document.getElementById("inputElement").value
-        let container = document.getElementById('inputElement').value
-		container.appendChild(element)
+        let sp = document.getElementById('inputElement').value
+		sp.appendChild(element)
 		
 		element.innerHTML = value
 		element.className = "cycler"
@@ -71,10 +71,10 @@
         function spin() {
             let cyclerItems = document.getElementsByClassName("cycler")
             if(cyclerItems.length > 1) {
-                removedItem = cyclerItems[cyclerItems.length-1]
+                ch = cyclerItems[cyclerItems.length-1]
                 cyclerItems[cyclerItems.length-1].remove()
-                let container = document.getElementById("target")
-                container.insertBefore(removedItem, container.firstChild)
+                let sp = document.getElementById("target")
+                sp.insertBefore(ch, sp.firstChild)
             }
         }
 </script>
